@@ -30,29 +30,31 @@ document.querySelector('.check').addEventListener('click', function(){
         }
 
 
-    // when no is greater than secretnumber
-    }else if(guess > secretNumber){
+    // when no is not equal to secretnumber
+    }else if(guess !== secretNumber){
         if(score > 1){ 
-        document.querySelector('.message').textContent = 'too high'
+        document.querySelector('.message').textContent = guess > secretNumber ?'too high': 'too low';
         score--;
         document.querySelector('.score').textContent = score
         }else{
             document.querySelector('.message').textContent = 'You lost the game'
             document.querySelector('.score').textContent = 0
         }
+    }
+    
 
 
     // when no is smaller than secretnumber
-    }else if(guess < secretNumber){
-        if(score > 1){ 
-        document.querySelector('.message').textContent = 'too low'
-        score--;
-        document.querySelector('.score').textContent = score
-        }else{
-            document.querySelector('.message').textContent = 'You lost'
-            document.querySelector('.score').textContent = 0
-        }
-    }
+    // }else if(guess < secretNumber){
+    //     if(score > 1){ 
+    //     document.querySelector('.message').textContent = 'too low'
+    //     score--;
+    //     document.querySelector('.score').textContent = score
+    //     }else{
+    //         document.querySelector('.message').textContent = 'You lost'
+    //         document.querySelector('.score').textContent = 0
+    //     }
+    // }
 })
 
 document.querySelector('.again').addEventListener('click', function(){
